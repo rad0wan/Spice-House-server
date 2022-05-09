@@ -43,6 +43,18 @@ async function run() {
             console.log(result);
         })
 
+        app.post('/products', async (req, res) => {
+            const newItem = req.body;
+            const result = await spiceCollection.insertOne(newItem);
+            res.send(result)
+
+        })
+
+        app.put('/inventory/:id', (req, res) => {
+            const filter = req.body
+            console.log(req.body);
+        })
+
     }
     finally {
 
